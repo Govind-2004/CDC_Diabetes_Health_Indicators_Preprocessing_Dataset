@@ -1050,7 +1050,7 @@
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-question">High Blood Pressure</div>
+          <div class="card-question">Blood Pressure</div>
           <div class="card-subhelp">Have you ever been told you have high blood pressure?</div>
         </div>
         <div class="card-num">06</div>
@@ -1065,7 +1065,7 @@
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-question">High Cholesterol</div>
+          <div class="card-question">Cholesterol</div>
           <div class="card-subhelp">Have you ever been told you have high blood cholesterol?</div>
         </div>
         <div class="card-num">07</div>
@@ -1196,7 +1196,7 @@
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-question">Heavy Alcohol Consumption</div>
+          <div class="card-question">Alcohol Consumption</div>
           <div class="card-subhelp">Adult men >14 drinks/week, Adult women >7 drinks/week</div>
         </div>
         <div class="card-num">15</div>
@@ -1369,13 +1369,13 @@
           </div>
         </div>
 
-        <div class="risk-status-pill low-risk" id="riskStatusBadge">LOW STATISTICAL RISK</div>
+        <div class="risk-status-pill low-risk" id="riskStatusBadge">LOW CHANCE OF DIABETES</div>
       </div>
 
       <!-- 3. RESULT EXPLANATION -->
       <div class="card result-info-card">
         <p class="result-explanation-text" id="resultExplanation">
-          Based on the information you provided, the model estimates a relatively low statistical likelihood of being flagged for diabetes.
+          Based on the information you provided, the model estimates a relatively low chance of being diabetic.
         </p>
       </div>
 
@@ -1385,7 +1385,7 @@
         
         <div class="breakdown-item">
           <div class="breakdown-labels">
-            <span>Flagged Diabetes Risk</span>
+            <span>Chance of being diabetic</span>
             <strong id="breakdownRiskText">0%</strong>
           </div>
           <div class="breakdown-bar-track">
@@ -1395,7 +1395,7 @@
 
         <div class="breakdown-item" style="margin-top: 14px;">
           <div class="breakdown-labels">
-            <span>Low Risk Probability</span>
+            <span>Chance of being not diabetic</span>
             <strong id="breakdownHealthyText">0%</strong>
           </div>
           <div class="breakdown-bar-track">
@@ -1777,15 +1777,15 @@
     const explanation = document.getElementById('resultExplanation');
 
     if (data.result === 'at_risk') {
-      badge.textContent = 'ELEVATED STATISTICAL RISK';
+      badge.textContent = 'HIGH CHANCE OF DIABETES';
       badge.className = 'risk-status-pill elevated-risk';
       gaugeArc.setAttribute('stroke', '#f59e0b');
-      explanation.textContent = 'Based on the information provided, the model estimates an elevated statistical likelihood of diabetes risk indicators. We recommend discussing your results with a qualified healthcare professional.';
+      explanation.textContent = 'Based on the information provided, the model estimates a high chance of being diabetic. We recommend discussing your results with a qualified healthcare professional.';
     } else {
-      badge.textContent = 'LOW STATISTICAL RISK';
+      badge.textContent = 'LOW CHANCE OF DIABETES';
       badge.className = 'risk-status-pill low-risk';
       gaugeArc.setAttribute('stroke', '#00bfa5');
-      explanation.textContent = 'Based on the information you provided, the model estimates a relatively low statistical likelihood of being flagged for diabetes.';
+      explanation.textContent = 'Based on the information you provided, the model estimates a low chance of being diabetic.';
     }
   }
 
